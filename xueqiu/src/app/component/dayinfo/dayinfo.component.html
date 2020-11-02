@@ -1,0 +1,51 @@
+<div class="dayInfo">
+    <div class="time">
+        <span class="day">{{currentTime | date: 'dd'}}</span>
+        <span class="month">{{ getMonth(currentTime | date: 'MM') }} </span>
+    </div>
+
+    <div class="unter">
+        <div class="leftList">
+            <div class="infoList" *ngFor="let item of newsList">
+                <div class="infoItem">
+                    <div class="itemLeft">
+                        <div class="infoTime">
+                            {{item.created_at | date: 'HH:mm'}}</div>
+                        </div>
+                    <div class="itemRight">
+                        <p>{{item.text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="rightList">
+            <h3 class="title">热股榜
+                <a href="">更多</a>
+            </h3>   
+            <div class="selector">
+                <div class="header">
+                    <a class="stockItem" [class.active]="currentStock==10" (click)="getRank(10)">全球</a>
+                    <a class="stockItem" [class.active]="currentStock==12" (click)="getRank(12)">沪深</a>
+                    <a class="stockItem" [class.active]="currentStock==13" (click)="getRank(13)">港股</a>
+                    <a class="stockItem" [class.active]="currentStock==11" (click)="getRank(11)">美股</a>
+                </div>
+                <div class="rankList">
+                   <table class="table">
+                       <tr *ngFor="let item of rankList index as i">
+                           <td [class.top]="i<=2">{{i}}</td>
+                           <td>{{item.name}}</td>
+                           <td [class.priceDown]="item.increment<0"> 
+                               <i class="iconfont_iconfont_9UW stockUp"></i>
+                           </td>
+                           <td class="stockValue" [class.priceDown]="item.increment<0">{{item.value}}</td>
+                       </tr>
+                   </table>
+                </div>
+            </div>   
+             
+        </div>
+    </div>
+
+   
+</div>

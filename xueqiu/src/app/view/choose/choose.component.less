@@ -1,0 +1,87 @@
+.cstock  {
+    width: 960px;
+    margin: 0 auto;
+    .left {
+        width: 640px;
+        display: flex;
+        flex-direction: column;
+        .chooseRange {
+            display: flex;
+            height: 40px;
+            background-color: #efefef;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+        }
+        .tools {
+            display: flex;
+            .toolsTabs {
+                width: 100px;
+                border-right: 1px solid #ccc;
+                padding: 20px, 0;
+                .tabItem {
+                    height: 38px;
+                    text-align: center;
+                    line-height: 38px;
+                    // tabItem 除了自己的border 还有toolsTab的border, 所有向右移一个px
+                    transform: translate(1px, 0);
+                }
+                .active {
+                    border: 1px solid #ccc;
+                    border-right: 1px solid #fff;
+                }
+            }
+            .toolsContent {
+                width: 600px;
+                .tabContent {
+                    margin-left: 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    .checkItem {
+                        width: 33.3%;
+                        line-height: 30px;
+                        text-overflow: ellipsis;
+                        overflow: hidden;
+                        //一个word不能转行
+                        // word-break: keep-all;
+                        // 不能有新的一行
+                        white-space: nowrap ;
+                    }
+                }
+                
+                .contentHeader {
+                    height: 25px;
+                    background-color: lightgray;
+                    display: flex;
+                    justify-content: space-between;
+                }
+                .contentHeader > span {
+                    margin: 0;
+                    line-height: 25px;
+                    padding-left: 10px;
+                    font-weight: 700;
+                }
+                .contentHeader > a {
+                    margin: 0;
+                    line-height: 25px;
+                    padding-right: 10px;
+                }
+                .fold {
+                    display: none;
+                }
+
+                
+                                
+            }
+            
+        }
+
+        .filterList {
+            .filterItem {
+                display: flex;
+            }
+        }
+    }
+
+    
+}

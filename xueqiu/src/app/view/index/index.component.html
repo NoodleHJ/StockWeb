@@ -1,0 +1,38 @@
+<div class="main">
+    <div class="mainLeft">
+        <div class="index">
+            <div class="indexList" [style]="indexListPosition">
+                <div class="indexItem" *ngFor="let item of quoteList" [class.negative]="item.quote.percent<0">
+                    <div class="indexItemLeft">    
+                        <h3>{{item.quote.name}}</h3>
+                        <div>{{item.quote.current}}</div>
+                        <p>{{item.quote.chg}}({{item.quote.percent}}%)</p>
+                    </div>
+                    <div class="svg">
+                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="width: 80px; height: 32.8px;">
+                            <path class="StockSlider_last-close_3k-" d="M0 20 L80 20"></path>
+                            <path class="StockSlider_polyline_YMO" d="M0 15 L0 18 L0 15 L0 12 L1 11 L1 11 L1 12 L2 14 L2 17 L2 18 L3 20 L3 21 L3 21 L4 21 L4 22 L4 25 L5 27 L5 27 L5 27 L6 26 L6 25 L6 27 L7 28 L7 31 L7 33 L8 32 L8 32 L8 29 L9 29 L9 29 L9 29 L10 30 L10 28 L10 29 L11 27 L11 27 L11 24 L12 21 L12 19 L12 16 L13 8 L13 9 L13 9 L14 3 L14 3 L14 5 L15 4 L15 7 L15 7 L16 8 L16 12 L16 13 L17 13 L17 14 L17 13 L18 12 L18 11 L18 13 L19 14 L19 15 L19 17 L20 15 L20 16 L20 15 L21 18 L21 17 L21 15 L22 16 L22 14 L22 13 L23 14 L23 13 L23 15 L24 15 L24 15 L24 15 L25 16 L25 17 L25 18 L26 17 L26 16 L26 20 L27 24 L27 25 L27 23 L28 23 L28 22 L28 23 L29 23 L29 23 L29 25 L30 23 L30 23 L30 23 L31 24 L31 22 L31 21 L32 20 L32 18 L32 18 L33 17 L33 15 L33 15 L34 16 L34 16 L34 16 L35 16 L35 15 L35 13 L36 12 L36 11 L36 12 L37 13 L37 11 L37 13 L38 15 L38 15 L38 15 L39 16 L39 15 L39 15 L40 16 L40 14 L40 13 L40 13 L41 13 L41 13 L41 15 L42 15 L42 15 L42 17 L43 16 L43 16 L43 15 L44 16 L44 17 L44 18 L45 19 L45 21 L45 21 L46 21 L46 20 L46 19 L47 17 L47 17 L47 18 L48 18 L48 18 L48 18 L49 18 L49 17 L49 17 L50 15 L50 14 L50 14 L51 16 L51 14 L51 14 L52 11 L52 11 L52 10 L53 12 L53 12 L53 13 L54 12 L54 12 L54 12 L55 12 L55 12 L55 12 L56 11 L56 12 L56 13 L57 13 L57 12 L57 14 L58 15 L58 15 L58 14 L59 15 L59 15 L59 18 L60 20 L60 20 L60 20 L61 20 L61 20 L61 21 L62 23 L62 25 L62 23 L63 21 L63 23 L63 23 L64 23 L64 24 L64 24 L65 25 L65 27 L65 26 L66 23 L66 23 L66 24 L67 24 L67 23 L67 23 L68 22 L68 22 L68 23 L69 22 L69 23 L69 25 L70 25 L70 26 L70 26 L71 27 L71 29 L71 30 L72 30 L72 28 L72 30 L73 28 L73 27 L73 27 L74 28 L74 29 L74 29 L75 30 L75 29 L75 29 L76 30 L76 29 L76 28 L77 30 L77 30 L77 31 L78 30 L78 30 L78 30 L79 30 L79 30 L79 31"></path>
+                            0
+                        </svg>
+                    </div>
+                </div>
+            </div>
+            <div class="circleList">
+                <div class="circleItem" (click)="toggleIndex(0)"></div>
+                <div class="circleItem" (click)="toggleIndex(1)"></div>
+                <div class="circleItem" (click)="toggleIndex(2)"></div>
+                <div class="circleItem" (click)="toggleIndex(3)"></div>
+            </div>
+        </div>
+    </div>
+    <div class="mainRight">
+        <div class="newsTab">
+            <a class="tabBtn" [class.activate]="activatePage==0" (click)="tableEvent(0)">雪球推荐</a>
+            <a class="tabBtn" [class.activate]="activatePage==1"(click)="tableEvent(1)">7*24</a>
+            <!-- <div class="tabBtn" (click)="tableEvent(2)">沪深</div>
+            <div class="tabBtn" (click)="tableEvent(3)">科创板</div> -->
+            <!-- This element informs Angular to update the application view with the component for the selected route. -->
+        </div>
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,147 @@
+.dayInfo {
+    .time{
+        padding: 10px;
+        border-bottom: 1px solid gray;
+    }
+   
+    .time .month {
+        font-size: 20px;
+        font-weight: 600;
+        color: #999;
+        margin: 0 10px;
+    }
+    .time .day {
+        font-size: 30px;
+        font-weight: 900;
+        color: orange;
+    }
+
+    .unter {
+        display: flex;
+        .leftList {
+            .infoList {
+                flex-direction: row;
+                width: 640px;
+                padding: 20px 10px;
+                .infoItem {
+                    display: flex;
+                    justify-content: space-between;
+                    .itemLeft {
+                        width: 38px;
+                        padding: 15px 0;
+                    }
+                    .itemRight {
+                        width: 550px;
+                        position: relative;
+                    }
+                    .itemRight:before {
+                        content: "";
+                        width: 8px;
+                        height: 8px;
+                        border-radius: 4px;
+                        background-color: #ccc;
+                        position: absolute;
+                        left: -17px;
+                        top: 17px;
+                    }
+        
+                    .itemRight:after {
+                        content: "";
+                        width: 3px;
+                        height: 100%;
+                        border-radius: 5px;
+                        background-color: #ccc;
+                        position: absolute;
+                        left: -15px;
+                        top: 32px;
+                    }
+                    
+                }
+            
+            }
+        }
+        .righList {
+            .title {
+                display: flex;
+                flex-direction: row;
+            }
+         
+        }
+    }
+}
+
+.selector {
+    width: 280px;
+    .header {
+        width: 100%;
+        margin-bottom: 10px;
+        border-top: 1px solid #edf0f5;
+        border-bottom: 1px solid #edf0f5;
+        &::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+    }
+
+    .header>a {
+        float: left;
+        width: 25%;
+        font-size: 14px;
+        text-align: center;
+        padding: 4px 0;
+        color: #33353c;
+    }
+
+    .header>a.active {
+        position: relative;
+        border-left: 1px solid #edf0f5;
+        border-right: 1px solid #edf0f5;
+        color: #06c;
+        &::before {
+            position: absolute;
+            content: "";
+            width: 100%;
+            height: 2px;
+            left: 0;
+            top: -1px;
+            z-index: 1;
+            background-color: blue;
+        }
+        &::after {
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            content: "";
+            width: 100%;
+            height: 2px;
+            z-index: 1;
+            background: #fff;
+        }
+    }
+
+    .rankList {
+        .table {
+            width: 100%;
+            font-size: 14px;
+            .priceDown{
+                color: green
+            }
+            .stockValue {
+                font-weight: 800;
+            }
+            
+            .top {
+                color: red;
+            }
+            .iconfont_iconfont_9UW { 
+                font-family: iconfont!important;
+                font-size: inherit;
+                font-style: normal;
+                -webkit-font-smoothing: antialiased;
+                -webkit-text-stroke-width: .2px;
+            }
+        }
+    }
+    
+}

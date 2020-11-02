@@ -1,0 +1,115 @@
+<div class="cstock">
+    <div class="left">
+        <div class="chooseMarket">
+            <span>沪深</span>
+            <span>港股</span>
+            <span>美股</span>
+        </div>
+        <h3>选择范围</h3>
+        <div class="chooseRange">
+            <div class="rangeItem" >
+                <span>市场: </span>
+                <select name="rangeMarket"[(ngModel)]="exchange">
+                    <option value="sh_sz">全部A股</option>
+                    <option value="sha">沪深A股</option>
+                    <option value="sza">深市A股</option>
+                </select>
+            </div>
+            <div class="rangeItem" >
+                <span>行业: </span>
+                <select name="rangeMarket" [(ngModel)]="indcode">
+                    <option value="">全部</option>
+                    <option *ngFor="let item of industrieList" value="item.encode">{{item.name}}</option>
+                </select>
+            </div>
+            <div class="rangeItem">
+                <span>地域板块: </span>
+                <select name="rangeMarket" [(ngModel)]="areacode">
+                    <option value="">全部</option>
+                    <option *ngFor="let item of areaList" value="item">{{areas[item]}}</option>
+                </select>
+            </div>
+        </div>
+        <h3>条件设置</h3>
+        <div class="tools">
+            <div class="toolsTabs">
+                <div class="tabItem" *ngFor="let item of tabList"  [class.active]="currentTab==item" (click)="toggleTabs(item)"> 
+                    {{item}} 
+                </div>
+            </div>
+            <div class="toolsContent">
+                <div class="content" *ngIf="currentTab=='财务报表'">
+                    <div class="contentItem" *ngFor="let item of tabObj[currentTab], let i = index"> 
+                        <div class="contentHeader">
+                            <span>{{item | dicKey}}</span>
+                            <a (click)="togglePanel(i)">{{openText[i]}}</a>
+                        </div>
+                        <div class="tabContent" [class.fold]="open[i]==false">
+                            <div class="checkItem" 
+                                *ngFor="let index of (item | dicValue)" 
+                                (change)="checkEvent(index)"> 
+                                <input type="checkbox" name="index.field" id="index.field" value="index.field">
+                                <label for="index.field">{{index.name}}</label>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                <div class="tabContent" *ngIf="currentTab!='财务报表'">
+                    <div class="checkItem" 
+                         *ngFor="let item of tabObj[currentTab]" 
+                         (change)="checkEvent(item)"> 
+                        <input type="checkbox" name="item.field" id="item.field" value="item.field">
+                        <label for="item.field">{{item.name}}</label>
+                    </div>
+                </div>
+            </div> 
+        </div>
+
+        <h3>筛选条件</h3>
+        <div class="filterList">
+            <div class="header">
+                <span class="filterSpan">条件</span>
+                <span class="filterSpan">最小值</span>
+                <span class="filterSpan">条件范围</span>
+                <span class="filterSpan">最大值</span>
+                <span class="filterSpan">删除</span>
+            </div>
+            <div class="filterContent">
+                <div class="filterItem" *ngFor="let item of filterList">
+                    <div class="filterSpan">
+                        {{item.name}}
+                    </div>
+                    <div class="filterSpan">
+                        <input type="text" [(ngModel)]="item.cmin"> 
+                    </div> 
+                    <div class="filterSpan">
+                        <input type="range" [attr.min]="item.min" [attr.max]="item.max" [(ngModel)]="item.cmin">
+                    </div> 
+                    <div class="filterSpan">
+                        <input type="text" [(ngModel)]="item.cmax"> 
+                    </div>
+                    <div class="filterSpan">
+                        <input type="range" [attr.min]="item.min" [attr.max]="item.max" [(ngModel)]="item.cmax">
+                    </div> 
+                    <div class="filterSpan">
+                        <button>删除</button>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <button (click)="getSelectStock()">开始选股</button>
+        </div>
+
+        <h3>筛选的股票列表</h3>
+        <div class="filterStockList">
+            <div class="filterStockItem" *ngFor="let item of filterStockList">
+                {{item.name}}-->{{item.symbol}} --> {{item.current}}
+            </div>
+        </div>
+    </div>
+    <div class="right"></div>
+</div>
+ 

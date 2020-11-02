@@ -1,0 +1,92 @@
+.main{
+    width: 960px;
+    margin: 0 auto;
+}
+
+.index {
+    width: 640px;  
+    height: 90px;
+    overflow: hidden;
+    .indexList {
+        display: flex;
+        .indexItem {    
+            display: flex;
+            flex: 0 0 213.33px;
+            align-items: center;
+            .indexItemLeft h3 {
+                font-size: 14px;
+                font-weight: 600;
+                margin: 5px 0;
+                width: 90px;
+               //单行溢出
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            .indexItemLeft>div {
+                font-size: 18px;
+                font-weight: 900;
+                color: orangered;
+            }
+            .indexItemLeft>p {
+                font-size: 12px;
+                font-weight: 600;
+                color: orangered;
+                margin: 0 0;
+            }
+            .svg svg {
+                height: 56px;
+                transform: scale(.5);
+            }
+            
+        }
+        .negative {
+            .indexItemLeft>div,  .indexItemLeft>p {
+                color: green;
+            }
+       }
+    }  
+    .circleList {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .circleItem { 
+            width: 4px;
+            height: 4px;
+            border: 2px solid #ccc;
+            // radius = (width + 2 * border) / 2
+            border-radius: 4px;
+            margin: 2px 5px;
+            
+        }
+    }
+}
+
+.newsTab {
+    padding: 2px;
+    display: block;
+    font-size: 16px;
+    border-bottom: 1px solid gray;
+    cursor: pointer;
+    .tabBtn {
+        text-align: center;
+        line-height: 40px;
+        margin: 0 0 0 10px;
+    }
+    .activate {
+        color: #06c;
+        font-weight: 900;
+        position: relative;
+        margin: 5px;
+        &:after {
+            width: 100%;
+            content: '';
+            position: absolute;
+            left: 0; bottom: -16px;
+            height: 5px;
+            background-color: #06c;
+            transition: width .25s;
+        }
+    }
+}
+

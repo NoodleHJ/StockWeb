@@ -1,0 +1,36 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, "pingfang sc", "Hiragino Sans GB", "Microsoft YaHei", 微软雅黑, STHeiti, SimSun, sans-serif;
+    color: rgb(51, 53, 60);
+    -webkit-font-smoothing: antialiased;
+}
+
+.StockSlider_home__stock-index__item_1V7, .StockSlider_chart_2e2, .StockSlider_last-close_3k- {
+    fill: none;
+    stroke: #666c72;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 6,6;
+}
+
+.StockSlider_home__stoc k-index__item_1V7, .StockSlider_chart_2e2, .StockSlider_polyline_YMO {
+    fill: none;
+    stroke-width: 2;
+}
+.StockSlider_slip_3tc, .StockSlider_polyline_YMO {
+    stroke: red !important;
+}
+
+.negative, .StockSlider_slip_3tc, .StockSlider_polyline_YMO {
+    stroke: #093 !important;
+}
+
+h3 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+* {
+    box-sizing: border-box;
+}

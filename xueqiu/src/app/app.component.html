@@ -1,0 +1,18 @@
+<div class="header">
+  <div class="nav">
+      <div class="logo">
+        <img src="./assets/img/xueqiulogo.png" alt="hello">
+      </div>
+      <div class="navList">
+        <div class="navItem" [class.active]="activeDom == 1" (click)="addActive(1)" [routerLink]="[ '/']" routerLinkActive="active">首页</div>
+        <div class="navItem" [class.active]="activeDom == 2" (click)="addActive(2)" [routerLink]="[ '/screener']" routerLinkActive="active">股票筛选</div>
+        <div class="navItem" [class.active]="activeDom == 3" (click)="addActive(3)" [routerLink]="[ '/newstock']" routerLinkActive="active"> 新股上市</div>
+      </div>
+      <div class="search">
+        <input placeholder="搜索"type="text">
+        <span class="searchIcon"></span>
+      </div>
+  </div>
+</div>
+<router-outlet></router-outlet>
+
